@@ -60,8 +60,10 @@
     "webpack-dev-server": "^4.9.1"
   },
   "dependencies": {
+    "buffer": "^6.0.3",
     "gh-pages": "^4.0.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "sjcl": "^1.0.8"
   },
   "main": "webpack.config.js"
 }
