@@ -5,3 +5,14 @@
   list-style: none;
   text-decoration: none;
 }
+
+#nav-bar {
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-lists {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
