@@ -17,21 +17,20 @@ const getToken = async() => {
     const data = await result.json();
     const realToken = data.access_token;
     return realToken;
+    
 }
 getToken().then((token) => {
     //async function to get songs
 const getTracks = async(whatever) => {
-    const result = await fetch('https://api.spotify.com/v1/track/6ydEhrdfzhI29D2NBAqUY1', {
+    const result = await fetch('https://api.spotify.com/v1/tracks?market=CU&ids=6ydEhrdfzhI29D2NBAqUY1', {
         method: 'GET',
         headers: {
         'Authorization': 'Bearer ' + whatever
     }
     });
     const data = await result.json();
-    return data;
+    console.log(data);
 }
 getTracks(token);
 
 });
-
-
