@@ -1,1 +1,3 @@
-import './style.css';
+import spotifyAPI from './spotifyAPI.js';
+
+spotifyAPI();
