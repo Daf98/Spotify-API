@@ -4,4 +4,81 @@
   padding: 0;
   list-style: none;
   text-decoration: none;
+  color: white;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #16db63;
+  padding: 0.5rem;
+  box-shadow: 2px 5px green;
+  width: 40%;
+}
+
+.song {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+button:hover {
+  background-color: green;
+  border: 1px solid #140c0b;
+  color: #140c0b;
+}
+
+.nav-lists {
+  display: flex;
+  gap: 80px;
+}
+
+.nav-item {
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.fa-heart {
+  cursor: pointer;
+  color: white;
+}
+
+#nav-bar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #140c0b;
+}
+
+#logo {
+  height: 50px;
+  padding-right: 3rem;
+}
+
+#album-img {
+  height: 200px;
+}
+
+#main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 5rem;
+  gap: 2rem;
+  background-color: #0e0e0e;
+}
+
+#id-container {
+  display: flex;
+  gap: 100px;
 }

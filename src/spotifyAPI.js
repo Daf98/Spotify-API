@@ -1,8 +1,13 @@
 import './style.css';
+import image from './spotitfy-img.png';
 
 const { Buffer } = require('buffer/');
 
 const spotifyAPI = () => {
+  // add logo
+  const logo = document.getElementById('logo-div');
+  logo.innerHTML = `<img id="logo" src=${image} alt="logo" />`;
+
   const clientID = '54e1c1ed18694a4783e400e6647c8109';
   const clientSecret = 'd88c4932b8cb456e976aeaedb74f4a42';
 
@@ -47,11 +52,16 @@ const spotifyAPI = () => {
         const albumImg = track.album.images[0].url;
         const releaseDate = track.album.release_date;
         const body = document.getElementById('main');
-        body.innerHTML += `<h2>Song: ${trackName}</h2>
-        <h2>Band: ${bandName}</h2>
-        <h2>Album: ${albumName}</h2>
-        <h2>Release date: ${releaseDate}</h2>
-        <h2>Cover:<br><img src="${albumImg}" alt="album cover">
+        body.innerHTML += `<section class="song">
+        <h2><img id="album-img" src="${albumImg}" alt="album cover"></h2>
+        <h2 id="id-container">Song<i class="fa-solid fa-heart"></i></h2>
+        <h2>${trackName}
+        <h2>by ${bandName}</h2>
+        <h2>from ${albumName}</h2>
+        <h2>Released on ${releaseDate}</h2>
+        
+        <button>Comments</button>
+        </section>
         `;
       });
     });
