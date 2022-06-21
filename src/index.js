@@ -1,1 +1,3 @@
-import spotifyAPI from "./spotifyAPI.js";
+import spotifyAPI from './spotifyAPI.js';
+
+spotifyAPI();
