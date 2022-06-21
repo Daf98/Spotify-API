@@ -1,8 +1,13 @@
 import './style.css';
+import image from './spotitfy-img.png';
 
 const { Buffer } = require('buffer/');
 
 const spotifyAPI = () => {
+  // add logo
+  const logo = document.getElementById('logo-div');
+  logo.innerHTML = `<img id="logo" src=${image} alt="logo" />`;
+
   const clientID = '54e1c1ed18694a4783e400e6647c8109';
   const clientSecret = 'd88c4932b8cb456e976aeaedb74f4a42';
 
@@ -51,7 +56,7 @@ const spotifyAPI = () => {
         <h2>Band: ${bandName}</h2>
         <h2>Album: ${albumName}</h2>
         <h2>Release date: ${releaseDate}</h2>
-        <h2>Cover:<br><img src="${albumImg}" alt="album cover">
+        <h2>Cover:<br><img id="album-img" src="${albumImg}" alt="album cover">
         `;
       });
     });
