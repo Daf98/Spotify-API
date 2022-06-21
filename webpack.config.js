@@ -5,7 +5,6 @@ module.exports = {
   entry: "./src/index.js",
   devServer: {
     static: "./dist",
-    publicPath: "/"
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -19,6 +18,10 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
