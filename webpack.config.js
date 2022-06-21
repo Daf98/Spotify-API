@@ -13,7 +13,7 @@ module.exports = {
   ],
   mode: 'development',
   output: {
-    filename: 'main.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     assetModuleFilename: 'images/[hash][ext][query]',
     clean: true,
