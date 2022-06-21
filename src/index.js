@@ -22,15 +22,29 @@ const getToken = async() => {
 getToken().then((token) => {
     //async function to get songs
 const getTracks = async(whatever) => {
-    const result = await fetch('https://api.spotify.com/v1/tracks?market=CU&ids=6ydEhrdfzhI29D2NBAqUY1', {
+    const result = await fetch('https://api.spotify.com/v1/tracks?market=CU&ids=5ZTZL5UlpF3UZ8H7BhoI9N', {
         method: 'GET',
         headers: {
         'Authorization': 'Bearer ' + whatever
     }
     });
     const data = await result.json();
-    console.log(data);
+    return data;
 }
-getTracks(token);
-
+getTracks(token).then((tracks) => {
+    const trackArray = tracks.tracks[0];
+    const trackName = trackArray.name;
+    const bandName = trackArray.artists[0].name;
+    const albumName = trackArray.album.name;
+    const albumImg = trackArray.album.images[0].url;
+    const releaseDate = trackArray.album.release_date;
+    const body = document.getElementById('main');
+    body.innerHTML = `<h2>Song: ${trackName}</h2>
+    <h2>Band: ${bandName}</h2>
+    <h2>Album: ${albumName}</h2>
+    <h2>Release date: ${releaseDate}</h2>
+    <h2>Cover:<br><img src="${albumImg}" alt="album cover">
+    `
+   })
 });
+
