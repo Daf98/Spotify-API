@@ -54,7 +54,7 @@ const spotifyAPI = () => {
         const body = document.getElementById('main');
         body.innerHTML += `<section class="song">
         <h2><img id="album-img" src="${albumImg}" alt="album cover"></h2>
-        <h2 id="id-container">Song<i class="fa-solid fa-heart">♥</i></h2>
+        <h2 id="id-container">Song<i class="fa-solid fa-heart"></i></h2>
         <h2>${trackName}
         <h2>by ${bandName}</h2>
         <h2>from ${albumName}</h2>
