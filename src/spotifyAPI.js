@@ -52,11 +52,16 @@ const spotifyAPI = () => {
         const albumImg = track.album.images[0].url;
         const releaseDate = track.album.release_date;
         const body = document.getElementById('main');
-        body.innerHTML += `<section class="song"><h2>Song: ${trackName}</h2>
-        <h2>Band: ${bandName}</h2>
-        <h2>Album: ${albumName}</h2>
-        <h2>Release date: ${releaseDate}</h2>
-        <h2>Cover:<br><img id="album-img" src="${albumImg}" alt="album cover"></section>
+        body.innerHTML += `<section class="song">
+        <h2><img id="album-img" src="${albumImg}" alt="album cover"></h2>
+        <h2 id="id-container">Song<i class="fa-solid fa-heart"></i></h2>
+        <h2>${trackName}
+        <h2>by ${bandName}</h2>
+        <h2>from ${albumName}</h2>
+        <h2>Released on ${releaseDate}</h2>
+        
+        <button>Comments</button>
+        </section>
         `;
       });
     });

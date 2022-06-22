@@ -4,6 +4,7 @@
   padding: 0;
   list-style: none;
   text-decoration: none;
+  color: white;
 }
 
 body {
@@ -11,21 +12,27 @@ body {
   flex-direction: column;
 }
 
-#nav-bar {
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #16db63;
+  padding: 0.5rem;
+  box-shadow: 2px 5px green;
+  width: 40%;
+}
+
+.song {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
-  background-color: #140c0b;
-  color: white;
+  gap: 0.5rem;
 }
 
-#logo {
-  height: 50px;
-  padding-right: 3rem;
-}
-
-#album-img {
-  height: 200px;
+button:hover {
+  background-color: green;
+  border: 1px solid #140c0b;
+  color: #140c0b;
 }
 
 .nav-lists {
@@ -42,11 +49,36 @@ body {
   font-weight: bold;
 }
 
+.fa-heart {
+  cursor: pointer;
+  color:white;
+}
+
+#nav-bar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #140c0b;
+}
+
+#logo {
+  height: 50px;
+  padding-right: 3rem;
+}
+
+#album-img {
+  height: 200px;
+}
+
 #main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding: 5rem;
   gap: 2rem;
   background-color: #0e0e0e;
-  color: white;
+}
+
+#id-container {
+  display: flex;
+  gap: 100px;
 }
