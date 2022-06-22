@@ -1,7 +1,10 @@
 import './style.css';
 import image from './spotitfy-img.png';
-
-const { Buffer } = require('buffer/');
+import newLike from './newlike.js';
+import getLike from './getlike.js';
+const {
+  Buffer
+} = require('buffer/');
 
 const spotifyAPI = () => {
   // add logo
@@ -31,8 +34,7 @@ const spotifyAPI = () => {
     // async function to get songs
     const getTracks = async (whatever) => {
       const result = await fetch(
-        'https://api.spotify.com/v1/tracks?market=CU&ids=2aoo2jlRnM3A0NyLQqMN2f%2C3uz0O62HqYoyRiWZjS61KK%2C5ghIJDpPoe3CfHMGu71E6T%2C57JVGBtBLCfHw2muk5416J%2C70LcF31zb1H0PyJoS1Sx1r%2C3dPQuX8Gs42Y7b454ybpMR',
-        {
+        'https://api.spotify.com/v1/tracks?market=CU&ids=2aoo2jlRnM3A0NyLQqMN2f%2C3uz0O62HqYoyRiWZjS61KK%2C5ghIJDpPoe3CfHMGu71E6T%2C57JVGBtBLCfHw2muk5416J%2C70LcF31zb1H0PyJoS1Sx1r%2C3dPQuX8Gs42Y7b454ybpMR', {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${whatever}`,
@@ -54,7 +56,7 @@ const spotifyAPI = () => {
         const body = document.getElementById('main');
         body.innerHTML += `<section class="song">
         <h2><img id="album-img" src="${albumImg}" alt="album cover"></h2>
-        <h2 id="id-container">Song<i class="fa-solid fa-heart"></i></h2>
+        <h2 id="id-container">Song ${track.id}<i class="fa-solid fa-heart"></i></h2>
         <h2>${trackName}
         <h2>by ${bandName}</h2>
         <h2>from ${albumName}</h2>
@@ -63,9 +65,17 @@ const spotifyAPI = () => {
         <button>Comments</button>
         </section>
         `;
+        const likeButton = document.querySelectorAll('.fa-heart');
+        likeButton.forEach((button) => {
+          button.addEventListener('click', () => {newLike(track.id)});
+        });
+        likeButton.forEach((button) => {
+          button.addEventListener('click', getLike);
+        });
       });
     });
   });
-};
 
+
+}
 export default spotifyAPI;

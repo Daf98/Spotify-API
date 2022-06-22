@@ -1,7 +1,10 @@
 import spotifyAPI from './spotifyAPI.js';
-import likes from './likes.js';
+import newLike from './newlike.js';
+import getLike from './getlike.js';
 import comments from './comments.js';
 
 spotifyAPI();
-likes();
+// newLike();
+// getLike();
 comments();
+
