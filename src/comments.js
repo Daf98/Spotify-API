@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const comments = () => {
   const newComment = async () => {
     const response = await fetch(

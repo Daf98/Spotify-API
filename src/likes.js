@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const likes = () => {
   const newLike = async () => {
     const response = await fetch(
