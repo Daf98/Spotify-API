@@ -85,3 +85,8 @@ button:hover {
   display: flex;
   gap: 100px;
 }
+
+.footer {
+  padding: 2rem;
+  background-color: #140c0b;
+}
