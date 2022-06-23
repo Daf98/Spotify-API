@@ -57,7 +57,6 @@ const spotifyAPI = () => {
         <h2><img id="album-img" src="${albumImg}" alt="album cover"></h2>
         <h2 id="id-container"><i class="fa-solid fa-heart"></i></h2>
         <h2>${trackName}</h2>
-        
         <button class="comments">Comments</button>
         </section>
         `;
@@ -74,7 +73,26 @@ const spotifyAPI = () => {
             <h2>${trackName}
             <h2>by ${bandName}</h2>
             <h2>from ${albumName}</h2>
-            <h2>Released on ${releaseDate}</h2>`;
+            <h2>Released on ${releaseDate}</h2>
+            <h4>Add a comment<h4>
+            <form class='form' action='https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IdQnbnyUh784FAUyhm2C/comments/'
+            method='post'
+            ><input 
+            type="text"
+            id="name"
+            name="user"
+            maxlength="30"
+            placeholder="Your name"
+            required/>
+            <textarea
+            class="ta"
+            id="txt"
+            name="user_txt"
+            maxlength="200"
+            placeholder="Your insights"
+            required
+            ></textarea></form>
+            <button class="bt" type="submit">Comment</button>`;
             section.appendChild(article);
             mainBody.appendChild(section);
 
