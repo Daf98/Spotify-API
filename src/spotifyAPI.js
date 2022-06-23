@@ -10,10 +10,9 @@ const spotifyAPI = () => {
   // add logo
   const logo = document.getElementById('logo-div');
   logo.innerHTML = `<img id="logo" src=${image} alt="logo" />`;
-
   const clientID = '54e1c1ed18694a4783e400e6647c8109';
   const clientSecret = 'd88c4932b8cb456e976aeaedb74f4a42';
-
+  
   // async function to get the token
   const getToken = async () => {
     const result = await fetch('https://accounts.spotify.com/api/token', {
@@ -46,8 +45,9 @@ const spotifyAPI = () => {
     };
     getTracks(token).then((tracks) => {
       const trackArray = tracks.tracks;
-      // LOOP
-      trackArray.forEach((track) => {
+      // GET TRACKS LOOP
+      for (let i = 0; i < trackArray.length; i += 1) {
+        let track = trackArray[i];
         const trackName = track.name;
         const bandName = track.artists[0].name;
         const albumName = track.album.name;
@@ -56,26 +56,40 @@ const spotifyAPI = () => {
         const body = document.getElementById('main');
         body.innerHTML += `<section class="song">
         <h2><img id="album-img" src="${albumImg}" alt="album cover"></h2>
-        <h2 id="id-container">Song ${track.id}<i class="fa-solid fa-heart"></i></h2>
+        <div class="song-container"><h2 class="unique-id"></h2><i class="fa-solid fa-heart"></i></div>
         <h2>${trackName}
         <h2>by ${bandName}</h2>
         <h2>from ${albumName}</h2>
-        <h2>Released on ${releaseDate}</h2>
-        
+        <h2>Released on ${releaseDate}</h2>  
         <button>Comments</button>
         </section>
         `;
         const likeButton = document.querySelectorAll('.fa-heart');
-        likeButton.forEach((button) => {
-          button.addEventListener('click', () => {newLike(track.id)});
-        });
-        likeButton.forEach((button) => {
-          button.addEventListener('click', getLike);
-        });
-      });
-    });
+        for( let d = 0; d < likeButton.length; d += 1){
+          likeButton[d].addEventListener('click', () => {
+            newLike(trackArray[i].id)
+          })
+        }
+        };
+        const likeButton = document.querySelectorAll('.fa-heart');
+        for (let i = 0; i < likeButton.length; i += 1) {
+          likeButton[i].addEventListener('click', () => {
+            getLike().then((id) => {
+                for(let i = 0; i < id.length; i += 1) {
+                  uniqueId[i].textContent = id[i].likes;
+                }
+              });
+            });
+        }
+      const uniqueId = document.querySelectorAll('.unique-id');
+      getLike().then((id) => {
+        for(let i = 0; i < id.length; i += 1) {
+          uniqueId[i].textContent = id[i].likes;
+        };
+      })
+      
   });
-
-
+})
 }
+
 export default spotifyAPI;

@@ -56,6 +56,15 @@ button:hover {
   cursor: pointer;
   color: white;
 }
+.song-container {
+  display: flex;
+  gap: 100px;
+}
+
+.footer {
+  padding: 2rem;
+  background-color: #140c0b;
+}
 
 #nav-bar {
   display: flex;
@@ -81,12 +90,4 @@ button:hover {
   background-color: #0e0e0e;
 }
 
-#id-container {
-  display: flex;
-  gap: 100px;
-}
 
-.footer {
-  padding: 2rem;
-  background-color: #140c0b;
-}

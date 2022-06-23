@@ -1,6 +1,6 @@
 const newLike = async (id) => {
     const response = await fetch(
-      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IdQnbnyUh784FAUyhm2C/likes/',
+      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/aUOe0UAxqrqZevH0zybK/likes/',
       {
         method: 'POST',
         body: JSON.stringify({
