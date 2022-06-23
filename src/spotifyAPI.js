@@ -66,14 +66,16 @@ const spotifyAPI = () => {
         </section>
         `;
         const likeButton = document.querySelectorAll('.fa-heart');
-        for (let d = 0; d < likeButton.length; d += 1) {
-          likeButton[d].addEventListener('click', () => {
+        //ADDS LIKES TO API
+        for (let i = 0; i < likeButton.length; i += 1) {
+          likeButton[i].addEventListener('click', () => {
             newLike(trackArray[i].id);
           });
         }
       }
       const uniqueId = document.querySelectorAll('.unique-id');
       const likeButton = document.querySelectorAll('.fa-heart');
+      //ADDS LIKES TO SCREEN
       for (let i = 0; i < likeButton.length; i += 1) {
         likeButton[i].addEventListener('click', () => {
           getLike().then((id) => {
@@ -83,7 +85,7 @@ const spotifyAPI = () => {
           });
         });
       }
-
+      //SHOWS THE LIKES
       getLike().then((id) => {
         for (let i = 0; i < id.length; i += 1) {
           uniqueId[i].textContent = id[i].likes;
