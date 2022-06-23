@@ -67,6 +67,12 @@ button:hover {
   background-color: #140c0b;
 }
 
+.title-container {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+}
+
 #nav-bar {
   display: flex;
   justify-content: flex-start;
