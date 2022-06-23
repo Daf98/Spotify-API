@@ -2,8 +2,9 @@ import './style.css';
 import image from './spotitfy-img.png';
 import newLike from './newlike.js';
 import getLike from './getlike.js';
+
 const {
-  Buffer
+  Buffer,
 } = require('buffer/');
 
 const spotifyAPI = () => {
@@ -12,7 +13,7 @@ const spotifyAPI = () => {
   logo.innerHTML = `<img id="logo" src=${image} alt="logo" />`;
   const clientID = '54e1c1ed18694a4783e400e6647c8109';
   const clientSecret = 'd88c4932b8cb456e976aeaedb74f4a42';
-  
+
   // async function to get the token
   const getToken = async () => {
     const result = await fetch('https://accounts.spotify.com/api/token', {
@@ -47,7 +48,7 @@ const spotifyAPI = () => {
       const trackArray = tracks.tracks;
       // GET TRACKS LOOP
       for (let i = 0; i < trackArray.length; i += 1) {
-        let track = trackArray[i];
+        const track = trackArray[i];
         const trackName = track.name;
         const bandName = track.artists[0].name;
         const albumName = track.album.name;
@@ -65,31 +66,31 @@ const spotifyAPI = () => {
         </section>
         `;
         const likeButton = document.querySelectorAll('.fa-heart');
-        for( let d = 0; d < likeButton.length; d += 1){
+        for (let d = 0; d < likeButton.length; d += 1) {
           likeButton[d].addEventListener('click', () => {
-            newLike(trackArray[i].id)
-          })
+            newLike(trackArray[i].id);
+          });
         }
-        };
-        const likeButton = document.querySelectorAll('.fa-heart');
-        for (let i = 0; i < likeButton.length; i += 1) {
-          likeButton[i].addEventListener('click', () => {
-            getLike().then((id) => {
-                for(let i = 0; i < id.length; i += 1) {
-                  uniqueId[i].textContent = id[i].likes;
-                }
-              });
-            });
-        }
+      }
       const uniqueId = document.querySelectorAll('.unique-id');
+      const likeButton = document.querySelectorAll('.fa-heart');
+      for (let i = 0; i < likeButton.length; i += 1) {
+        likeButton[i].addEventListener('click', () => {
+          getLike().then((id) => {
+            for (let i = 0; i < id.length; i += 1) {
+              uniqueId[i].textContent = id[i].likes;
+            }
+          });
+        });
+      }
+
       getLike().then((id) => {
-        for(let i = 0; i < id.length; i += 1) {
+        for (let i = 0; i < id.length; i += 1) {
           uniqueId[i].textContent = id[i].likes;
-        };
-      })
-      
+        }
+      });
+    });
   });
-})
-}
+};
 
 export default spotifyAPI;

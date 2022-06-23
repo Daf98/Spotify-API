@@ -56,6 +56,7 @@ button:hover {
   cursor: pointer;
   color: white;
 }
+
 .song-container {
   display: flex;
   gap: 100px;
@@ -89,5 +90,3 @@ button:hover {
   gap: 2rem;
   background-color: #0e0e0e;
 }
-
-
