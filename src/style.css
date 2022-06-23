@@ -28,7 +28,6 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
   gap: 0.5rem;
 }
 
@@ -89,4 +88,35 @@ button:hover {
 .footer {
   padding: 2rem;
   background-color: #140c0b;
+}
+
+.popup {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+.pop-window {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 45%;
+  background-color: #0e0e0e;
+}
+
+.pop-img {
+  height: 500px;
+}
+
+.close-pop {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  width: 100%;
 }
