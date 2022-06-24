@@ -1,7 +1,6 @@
-import spotifyAPI from './spotifyAPI.js';
-import comments from './comments.js';
+import {addLogo, getToken} from './modules/spotifyAPI.js';
+import comments from './modules/comments.js';
 
-spotifyAPI();
-// newLike();
-// getLike();
+addLogo();
+getToken();
 comments();

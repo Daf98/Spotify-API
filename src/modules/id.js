@@ -4,4 +4,3 @@ const response = await fetch('https://us-central1-involvement-api.cloudfunctions
 });
 
 const apiResponse = response;
-return apiResponse;
