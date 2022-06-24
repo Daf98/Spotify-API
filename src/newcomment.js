@@ -14,6 +14,5 @@ const newComment = async (id, userName, userComment) => {
   const comment = await response.json();
   return comment;
 };
-newComment();
 
 export default newComment;

@@ -6,7 +6,7 @@ const getLike = async () => {
     },
   );
   const like = await response.json();
-  console.log(like);
+  return like;
 };
 
 export default getLike;
