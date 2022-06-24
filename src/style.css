@@ -106,15 +106,25 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: fixed;
   width: 100%;
   height: 100vh;
+  position: fixed;
   overflow-y: auto;
   background-color: #0e0e0e;
 }
 
+.pop {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.img {
+  margin-top: 50px;
+}
+
 .pop-img {
-  height: 100%;
+  height: 500px;
 }
 
 .close-pop {
@@ -124,17 +134,42 @@ button:hover {
   width: 100%;
 }
 
+.description {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding-bottom: 3rem;
+}
+
+.form-box {
+  display: flex;
+  width: 80vw;
+}
+
 .form {
   display:flex;
   flex-direction: column;
   gap: 2rem;
+  width: 30vw;
 }
 
 #name {
+  color: black;
+  font-size: 15px;
   height: 3rem;
 }
 
 .bt {
-  margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.ta {
+  height: 168px;
+  width: 506px;
+  color: black;
+  font-size: 15px;
+}
+
+h4 {
+  font-size: 25px;
 }
