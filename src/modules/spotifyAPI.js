@@ -1,20 +1,28 @@
-//Import assets
+// Import assets
 import '../style.css';
 import image from '../spotitfy-img.png';
 import newLike from './newlike.js';
 import getLike from './getlike.js';
-//Declare assets
+// Declare song IDs
+const id1 = '2o4AknH1hXnleCRW2rH45w';
+const id2 = '2C3GfOAdcoc3X5GPiiXmpBjK';
+const id3 = '2C2mLgOcRkEgq89j8WstUpui';
+const id4 = '2C2fuYa3Lx06QQJAm0MjztKr';
+const id5 = '2C0d28khcov6AiegSCpG5TuT';
+const id6 = '2C5n6RDaGFSN88oRWuGtYAIN';
+// Declare assets
 const {
   Buffer,
 } = require('buffer/');
+
 const clientID = '54e1c1ed18694a4783e400e6647c8109';
 const clientSecret = 'd88c4932b8cb456e976aeaedb74f4a42';
 const logo = document.getElementById('logo-div');
-///Functions
+/// Functions
 // Add the logo
 const addLogo = () => {
   logo.innerHTML = `<img id="logo" src=${image} alt="logo" />`;
-}
+};
 addLogo();
 // Fetch the token
 const getToken = async () => {
@@ -23,8 +31,8 @@ const getToken = async () => {
     body: 'grant_type=client_credentials',
     headers: {
       Authorization: `Basic ${Buffer.from(
-          `${clientID}:${clientSecret}`,
-        ).toString('base64')}`,
+        `${clientID}:${clientSecret}`,
+      ).toString('base64')}`,
       'Content-Type': 'application/x-www-form-urlencoded',
     },
   });
@@ -34,12 +42,12 @@ const getToken = async () => {
 };
 // Fetch the songs
 getToken().then((token) => {
-  const getTracks = async (whatever) => {
+  const getTracks = async (accessToken) => {
     const result = await fetch(
-      'https://api.spotify.com/v1/tracks?market=CU&ids=2aoo2jlRnM3A0NyLQqMN2f%2C3uz0O62HqYoyRiWZjS61KK%2C5ghIJDpPoe3CfHMGu71E6T%2C57JVGBtBLCfHw2muk5416J%2C70LcF31zb1H0PyJoS1Sx1r%2C3dPQuX8Gs42Y7b454ybpMR', {
+      `https://api.spotify.com/v1/tracks?market=CU&ids=${id1}%${id2}%${id3}%${id4}%${id5}%${id6}`, {
         method: 'GET',
         headers: {
-          Authorization: `Bearer ${whatever}`,
+          Authorization: `Bearer ${accessToken}`,
         },
       },
     );
@@ -54,14 +62,20 @@ getToken().then((token) => {
       const trackName = track.name;
       const albumImg = track.album.images[0].url;
       const body = document.getElementById('main');
-      body.innerHTML += `<section class="song">
-        <h2><img id="album-img" src="${albumImg}" alt="album cover"></h2>
-        <div class="title-container"><h2 class ="song-counter"></h2><i class="fa-solid fa-heart"></i></div>
-        <div class="song-container"><h2 class="unique-id"></h2></div>
+      body.innerHTML
+      += `<section class="song">
+        <h2><img id="album-img" src="${albumImg}" alt="Album cover"></h2>
+        <div class="title-container">
+          <h2 class ="song-counter"></h2>
+          <i class="fa-solid fa-heart"></i>
+        </div>
+        <div class="song-container">
+          <h2 class="unique-id"></h2>
+        </div>
         <h2>${trackName}</h2>
         <button>Comments</button>
-        </section>
-        `;
+      </section>
+      `;
     }
     // Count items
     const counter = () => {
@@ -97,5 +111,5 @@ getToken().then((token) => {
 
 export {
   addLogo,
-  getToken
+  getToken,
 };
