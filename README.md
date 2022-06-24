@@ -1,7 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # SpotItFy
-![]()
+![image](https://user-images.githubusercontent.com/82343891/175660324-bcba53be-eeef-49b0-8beb-89df68710e24.png)
+
 > In this app, you can like and comment on songs. External API used: Spotify.
 
 
