@@ -1,6 +1,8 @@
+
 import { addLogo, getToken } from './modules/spotifyAPI.js';
-import comments from './modules/comments.js';
+import newComment from './modules/newcomment.js';
 
 addLogo();
 getToken();
-comments();
+newComment();
+

@@ -3,6 +3,9 @@ import '../style.css';
 import image from '../spotitfy-img.png';
 import newLike from './newlike.js';
 import getLike from './getlike.js';
+import newComment from './newcomment.js';
+import getComment from './getcomment.js';
+import commentCount, { increaseCount } from './commentcount.js';
 // Declare song IDs
 const id1 = '2o4AknH1hXnleCRW2rH45w';
 const id2 = '2C3GfOAdcoc3X5GPiiXmpBjK';
@@ -73,9 +76,90 @@ getToken().then((token) => {
           <h2 class="unique-id"></h2>
         </div>
         <h2>${trackName}</h2>
-        <button>Comments</button>
+        <button class="comments">Comments</button>
       </section>
       `;
+      const mainBody = document.querySelector('body');
+      const active = document.querySelectorAll('.comments');
+      for (let i = 0; i < active.length; i += 1) {
+        active[i].addEventListener('click', async () => {
+          const section = document.createElement('section');
+          section.className = 'popup';
+          const article = document.createElement('article');
+          article.className = 'pop-window';
+          article.innerHTML = `
+
+            <i class="fa-solid fa-x"></i>
+
+          <h2 class="img">
+            <img class="pop-img" src="${trackArray[i].album.images[0].url}" alt="album cover">
+          </h2>
+          <div class="description">
+            <h2>${trackArray[i].name}</h2>
+            <h2>by ${trackArray[i].artists[0].name}</h2>
+            <h2>from ${trackArray[i].album.name}</h2>
+            <h2>Released on ${trackArray[i].album.release_date}</h2>
+          </div>
+          <div class=comment-box">
+            <h2 id=commentcount></h2>
+            <ul id="commenter"></ul>
+            </div>
+          <h4>Add a comment<h4>
+          <div class=form-box>
+            <form class='form'
+              action='https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IdQnbnyUh784FAUyhm2C/comments/'
+              method='post'>
+              <input type="text" id="name" name="user" maxlength="30" placeholder="Your name" required/>
+              <textarea class="ta" id="txt" name="user_txt" maxlength="200" placeholder="Your insights" required></textarea>
+              <button class="bt" type="submit">Comment</button>
+            </form>
+          </div>
+          `;
+          section.appendChild(article);
+          mainBody.appendChild(section);
+          const userName = document.getElementById('name');
+          const userComment = document.getElementById('txt');
+          const comment = document.querySelector('.form');
+          comment.addEventListener('submit', (e) => {
+            const loading = document.createElement('li');
+            loading.innerHTML = 'loading...';
+            const container = document.getElementById('commenter');
+            container.appendChild(loading);
+            e.preventDefault();
+            newComment(trackArray[i].id, userName.value, userComment.value);
+            setTimeout(() => {
+              getComment(trackArray[i].id).then(async (comments) => {
+                container.removeChild(loading);
+                const count = await increaseCount(trackArray[i].id);
+                document.getElementById('commentcount').innerHTML = `${'Comment: '}${count}`;
+                const userN = comments[comments.length - 1].username;
+                const userC = comments[comments.length - 1].comment;
+                const date = comments[comments.length - 1].creation_date;
+                const commentList = `<li class="score-list">${date}${userN}:${userC}</li>`;
+                document.getElementById('commenter').innerHTML += commentList;
+              });
+            }, 1000);
+          });
+
+          const popclose = document.querySelector('.fa-x');
+          popclose.addEventListener('click', () => {
+            section.remove(article);
+          });
+
+          const count = await commentCount(trackArray[i].id);
+          document.getElementById('commentcount').innerHTML = `${'Comment: '}${count}`;
+          getComment(trackArray[i].id).then((comments) => {
+            comments.forEach((comment) => {
+              const userN = comment.username;
+              const userC = comment.comment;
+              const date = comment.creation_date;
+              const commentList = `<li class="score-list">${date}${userN}:${userC}</li>`;
+              document.getElementById('commenter').innerHTML += commentList;
+            });
+          });
+          // }
+        });
+      }
     }
     // Count items
     const counter = () => {
