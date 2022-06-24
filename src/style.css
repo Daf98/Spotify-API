@@ -147,7 +147,7 @@ button:hover {
 }
 
 .form {
-  display:flex;
+  display: flex;
   flex-direction: column;
   gap: 2rem;
   width: 30vw;
