@@ -15,6 +15,13 @@ const id3 = '2C2mLgOcRkEgq89j8WstUpui';
 const id4 = '2C2fuYa3Lx06QQJAm0MjztKr';
 const id5 = '2C0d28khcov6AiegSCpG5TuT';
 const id6 = '2C5n6RDaGFSN88oRWuGtYAIN';
+const id7 = '2C6Ox9HWLHipsG6RH2a3eB8h';
+const id8 = '2C5RzXSxR7BUhEtpqh77lMbR';
+const id9 = '2C612vJFRzZMF23iKg2Dp6yN';
+const id10 = '2C575Sz3R4xOhueUstPObylF';
+const id11 = '2C6X5OFBbrsHRsyO1zP7udgr';
+const id12 = '2C1fbVlkib9ZYFFBwsEPD6nx';
+
 // Declare assets
 const {
   Buffer,
@@ -49,7 +56,7 @@ const getToken = async () => {
 getToken().then((token) => {
   const getTracks = async (accessToken) => {
     const result = await fetch(
-      `https://api.spotify.com/v1/tracks?market=CU&ids=${id1}%${id2}%${id3}%${id4}%${id5}%${id6}`, {
+      `https://api.spotify.com/v1/tracks?market=CU&ids=${id1}%${id2}%${id3}%${id4}%${id5}%${id6}%${id7}%${id8}%${id9}%${id10}%${id11}%${id12}`, {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -136,7 +143,7 @@ getToken().then((token) => {
                 const userN = comments[comments.length - 1].username;
                 const userC = comments[comments.length - 1].comment;
                 const date = comments[comments.length - 1].creation_date;
-                const commentList = `<li class="score-list">${date}${userN}:${userC}</li>`;
+                const commentList = `<li class="score-list">${date} ${userN}: ${userC}</li>`;
                 document.getElementById('commenter').innerHTML += commentList;
               });
             }, 1000);
