@@ -1,5 +1,4 @@
 jest.mock('./spotifyAPI.js');
-// MAKE COUNTER FUNCTION
 const Counter = require('./__mocks__/counter.js');
 
 const counter = new Counter();

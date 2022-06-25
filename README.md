@@ -1,62 +1,52 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# SpotItFy
+![image](https://user-images.githubusercontent.com/82343891/175660324-bcba53be-eeef-49b0-8beb-89df68710e24.png)
 
-> Description the project.
+> In this app, you can like and comment on songs. External API used: Spotify.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML, CSS, JavaScript
+- Git, GitHub, Webpack
+- Favicon
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](https://livedemo.com)
-
-
-## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+[Live Demo](https://livedemo.com)
+[Video Demo](https://loom.com)
 
 
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+### To launch the project locally:
+#### Step 1:
+- Clone this repo locally using git in the command line and the following command
+ ```bash
+ > git clone https://github.com/Daf98/Spotify-API.git
+ ```
+- Alternatively, you can just download the complete zip file and extract the folder in your directory
+#### Step 2:
+- In the terminal, you can run:
+```bash
+> cd Spotify-API
+> npm install
+> code .
+```
+- Then open index.html in a live server.
 
 ## Authors
 
-👤 **Author1**
+👤 **Dafne Azzolina**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Daf98](https://github.com/Daf98)
+- Twitter: [@dafne_azzolina](https://twitter.com/dafne_azzolina)
+- LinkedIn: [dafne-azzolina](https://www.linkedin.com/in/dafne-azzolina/)
 
-👤 **Author2**
+👤 **Fabien Brathwaite**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/).
+- GitHub: [@fibini](https://github.com/fibini)
+- Twitter: [@Onenewpage1](https://twitter.com/Onenewpage1)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/fabien-brathwaite-91150822a)
 
 ## Show your support
 
@@ -64,9 +54,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Hat tip to anyone whose code was used.
+- Shout-out to [Firdavs](https://github.com/fed1k), [Tinashe](https://github.com/Draxeytina) and [David](https://github.com/indigodavid/) for helping us with this project
 
 ## 📝 License
 
