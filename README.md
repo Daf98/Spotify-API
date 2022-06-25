@@ -16,8 +16,8 @@
 
 ## Live Demo
 
-[Live Demo](https://livedemo.com)
-[Video Demo](https://drive.google.com/file/d/1vt-KZKtVmaC2UfPwM0Kiy59g5I2X7DOw/view?usp=sharing)
+-[Live Demo](https://daf98.github.io/Spotify-API/dist/)
+-[Video Demo](https://drive.google.com/file/d/1vt-KZKtVmaC2UfPwM0Kiy59g5I2X7DOw/view?usp=sharing)
 
 
 ### To launch the project locally:
