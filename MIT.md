@@ -1,6 +1,5 @@
 ## Copyright 2021, Dafne Azzolina and Fabien Brathwaite
 
-###### Please delete this line and the next one
 ###### SpotItFy
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this Music App and associated documentation files, to deal in the [APP TYPE] without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Music App , and to permit persons to whom the Music App  is furnished to do so, subject to the following conditions:
