@@ -166,7 +166,7 @@ getToken().then((token) => {
     const counter = () => {
       const songCounter = document.querySelectorAll('.song-counter');
       let count = 0;
-      while (trackArray.length > count) {
+      while (count < trackArray.length) {
         songCounter[count].innerHTML += `Song ${count + 1}`;
         count += 1;
       }
