@@ -132,7 +132,7 @@ getToken().then((token) => {
               getComment(trackArray[i].id).then(async (comments) => {
                 container.removeChild(loading);
                 const count = await increaseCount(trackArray[i].id);
-                document.getElementById('commentcount').innerHTML = `${'Comment: '}${count}`;
+                document.getElementById('commentcount').innerHTML = `${'Comments: '}${count}`;
                 const userN = comments[comments.length - 1].username;
                 const userC = comments[comments.length - 1].comment;
                 const date = comments[comments.length - 1].creation_date;
