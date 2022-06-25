@@ -148,7 +148,7 @@ getToken().then((token) => {
           });
 
           const count = await commentCount(trackArray[i].id);
-          document.getElementById('commentcount').innerHTML = `${'Comment: '}${count}`;
+          document.getElementById('commentcount').innerHTML = `${'Comments: '}${count}`;
           getComment(trackArray[i].id).then((comments) => {
             comments.forEach((comment) => {
               const userN = comment.username;
