@@ -1,9 +1,11 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # SpotItFy
+> In this app, you can like and comment on songs. External API used: Spotify.
 ![image](https://user-images.githubusercontent.com/82343891/175660324-bcba53be-eeef-49b0-8beb-89df68710e24.png)
 
-> In this app, you can like and comment on songs. External API used: Spotify.
+
+
 
 
 ## Built With
@@ -15,7 +17,7 @@
 ## Live Demo
 
 [Live Demo](https://livedemo.com)
-[Video Demo](https://loom.com)
+[Video Demo](https://drive.google.com/file/d/1vt-KZKtVmaC2UfPwM0Kiy59g5I2X7DOw/view?usp=sharing)
 
 
 ### To launch the project locally:
