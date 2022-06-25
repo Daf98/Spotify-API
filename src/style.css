@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #16db63;
+  padding: 0.5rem;
+  box-shadow: 2px 5px green;
+  width: 40%;
+}
+
+.song {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+button:hover {
+  background-color: green;
+  border: 1px solid #140c0b;
+  color: #140c0b;
+}
+
+.nav-lists {
+  display: flex;
+  gap: 80px;
+}
+
+.nav-item {
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.fa-heart {
+  cursor: pointer;
+  color: white;
+}
+
+.song-container {
+  display: flex;
+  gap: 100px;
+}
+
+.title-container {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+}
+
+#nav-bar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #140c0b;
+}
+
+#logo {
+  height: 50px;
+  padding-right: 3rem;
+}
+
+#album-img {
+  height: 200px;
+}
+
+#main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 5rem;
+  gap: 2rem;
+  background-color: #0e0e0e;
+}
+
+#id-container {
+  display: flex;
+  gap: 100px;
+}
+
+.footer {
+  padding: 2rem;
+  background-color: #140c0b;
+}
+
+.popup {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  opacity: 1;
+  overflow-y: initial;
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+.pop-window {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  overflow-y: auto;
+  background-color: #0e0e0e;
+}
+
+.pop {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.img {
+  margin-top: 50px;
+}
+
+.pop-img {
+  height: 500px;
+}
+
+.fa-x {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  width: 100%;
+  padding-right: 1rem;
+  padding-top: 1rem;
+}
+
+.description {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-box {
+  display: flex;
+  width: 80vw;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 30vw;
+}
+
+#name {
+  color: black;
+  font-size: 15px;
+  height: 3rem;
+}
+
+.bt {
+  margin-bottom: 2rem;
+}
+
+.ta {
+  height: 168px;
+  width: 506px;
+  color: black;
+  font-size: 15px;
+}
+
+h4 {
+  font-size: 25px;
+}
+
+#commentcount {
+  padding: 2rem 0;
+  align-self: center;
+}
+
+.comment-box {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+}
+
+#commenter {
+  align-self: flex-start;
+  padding-left: 0;
+}
+
+.comment-add {
+  padding: 2rem 0;
+}
+
+#popup-counter {
+  display: flex;
+  padding: 1rem 0;
+  font-size: 2rem;
+}
