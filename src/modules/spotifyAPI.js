@@ -15,12 +15,12 @@ const id3 = '2C2mLgOcRkEgq89j8WstUpui';
 const id4 = '2C2fuYa3Lx06QQJAm0MjztKr';
 const id5 = '2C0d28khcov6AiegSCpG5TuT';
 const id6 = '2C5n6RDaGFSN88oRWuGtYAIN';
-const id7 ='2C6Ox9HWLHipsG6RH2a3eB8h';
-const id8 ='2C5RzXSxR7BUhEtpqh77lMbR';
-const id9 ='2C612vJFRzZMF23iKg2Dp6yN';
-const id10 ='2C575Sz3R4xOhueUstPObylF';
-const id11 ='2C6X5OFBbrsHRsyO1zP7udgr';
-const id12 ='2C1fbVlkib9ZYFFBwsEPD6nx';
+const id7 = '2C6Ox9HWLHipsG6RH2a3eB8h';
+const id8 = '2C5RzXSxR7BUhEtpqh77lMbR';
+const id9 = '2C612vJFRzZMF23iKg2Dp6yN';
+const id10 = '2C575Sz3R4xOhueUstPObylF';
+const id11 = '2C6X5OFBbrsHRsyO1zP7udgr';
+const id12 = '2C1fbVlkib9ZYFFBwsEPD6nx';
 
 // Declare assets
 const {
