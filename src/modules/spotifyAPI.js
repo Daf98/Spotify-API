@@ -5,7 +5,9 @@ import newLike from './newlike.js';
 import getLike from './getlike.js';
 import newComment from './newcomment.js';
 import getComment from './getcomment.js';
-import commentCount, { increaseCount } from './commentcount.js';
+import commentCount, {
+  increaseCount,
+} from './commentcount.js';
 // Declare song IDs
 const id1 = '2o4AknH1hXnleCRW2rH45w';
 const id2 = '2C3GfOAdcoc3X5GPiiXmpBjK';
@@ -65,8 +67,8 @@ getToken().then((token) => {
       const trackName = track.name;
       const albumImg = track.album.images[0].url;
       const body = document.getElementById('main');
-      body.innerHTML
-      += `<section class="song">
+      body.innerHTML += `
+      <section class="song">
         <h2><img id="album-img" src="${albumImg}" alt="Album cover"></h2>
         <div class="title-container">
           <h2 class ="song-counter"></h2>
@@ -88,23 +90,22 @@ getToken().then((token) => {
           const article = document.createElement('article');
           article.className = 'pop-window';
           article.innerHTML = `
-
-            <i class="fa-solid fa-x"></i>
-
-          <h2 class="img">
-            <img class="pop-img" src="${trackArray[i].album.images[0].url}" alt="album cover">
-          </h2>
+          <i class="fa-solid fa-x"></i>
+          <h3 class="img">
+          <img class="pop-img" src="${trackArray[i].album.images[0].url}" alt="album cover">
+          </h3>
+          <h1 id="popup-counter">Song ${i + 1}</h1>
           <div class="description">
-            <h2>${trackArray[i].name}</h2>
-            <h2>by ${trackArray[i].artists[0].name}</h2>
-            <h2>from ${trackArray[i].album.name}</h2>
-            <h2>Released on ${trackArray[i].album.release_date}</h2>
+            <h2>Name: ${trackArray[i].name}</h2>
+            <h2>Artist: ${trackArray[i].artists[0].name}</h2>
+            <h2>Album: ${trackArray[i].album.name}</h2>
+            <h2>Release date: ${trackArray[i].album.release_date}</h2>
           </div>
-          <div class=comment-box">
+          <div class="comment-box">
             <h2 id=commentcount></h2>
             <ul id="commenter"></ul>
             </div>
-          <h4>Add a comment<h4>
+          <h4 class="comment-add">Add a comment<h4>
           <div class=form-box>
             <form class='form'
               action='https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/IdQnbnyUh784FAUyhm2C/comments/'
@@ -122,7 +123,7 @@ getToken().then((token) => {
           const comment = document.querySelector('.form');
           comment.addEventListener('submit', (e) => {
             const loading = document.createElement('li');
-            loading.innerHTML = 'loading...';
+            loading.innerHTML = 'Loading...';
             const container = document.getElementById('commenter');
             container.appendChild(loading);
             e.preventDefault();
@@ -153,7 +154,7 @@ getToken().then((token) => {
               const userN = comment.username;
               const userC = comment.comment;
               const date = comment.creation_date;
-              const commentList = `<li class="score-list">${date}${userN}:${userC}</li>`;
+              const commentList = `<li class="score-list">${date} ${userN}: ${userC}</li>`;
               document.getElementById('commenter').innerHTML += commentList;
             });
           });
