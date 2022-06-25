@@ -18,6 +18,9 @@ const id6 = '2C5n6RDaGFSN88oRWuGtYAIN';
 const id7 ='2C6Ox9HWLHipsG6RH2a3eB8h';
 const id8 ='2C5RzXSxR7BUhEtpqh77lMbR';
 const id9 ='2C612vJFRzZMF23iKg2Dp6yN';
+const id10 ='2C575Sz3R4xOhueUstPObylF';
+const id11 ='2C6X5OFBbrsHRsyO1zP7udgr';
+const id12 ='2C1fbVlkib9ZYFFBwsEPD6nx';
 
 // Declare assets
 const {
@@ -53,7 +56,7 @@ const getToken = async () => {
 getToken().then((token) => {
   const getTracks = async (accessToken) => {
     const result = await fetch(
-      `https://api.spotify.com/v1/tracks?market=CU&ids=${id1}%${id2}%${id3}%${id4}%${id5}%${id6}%${id7}%${id8}%${id9}`, {
+      `https://api.spotify.com/v1/tracks?market=CU&ids=${id1}%${id2}%${id3}%${id4}%${id5}%${id6}%${id7}%${id8}%${id9}%${id10}%${id11}%${id12}`, {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${accessToken}`,
