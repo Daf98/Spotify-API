@@ -1,4 +1,4 @@
-jest.mock('../spotifyAPI.js');
+jest.mock('./spotifyAPI.js');
 const CommentCounter = require('./__mocks__/commentcount.js');
 
 const counter = new CommentCounter();
